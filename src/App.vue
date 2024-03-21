@@ -35,6 +35,7 @@ function speak(count: number): void {
   const utterance = new SpeechSynthesisUtterance(String(count));
 
   utterance.voice = selectedVoice.value;
+  utterance.lang = selectedVoice.value!.lang;
   utterance.rate = 2;
   speechSynthesis.cancel();
   speechSynthesis.speak(utterance);
